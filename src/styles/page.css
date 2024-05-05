@@ -11,7 +11,7 @@
   }
 .body{
     background: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
-    animation: changing 5s linear infinite;
+    animation: changing 3s linear infinite;
     background-size: 300%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: gray;
