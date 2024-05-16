@@ -7,10 +7,10 @@
     <title>Проверка Метро</title>
 </head>
 <body class="body">
-    <span class="overlay"></span>
-    <header class="header">Проверка станций метро</header>
+    <header class="header">
+        <h1 class="header_title">Проверка станций метро</h1></header>
     <main class="container">
-        <span  id="temp"></span>
+        <span class="temp" id="temp"></span>
         <h1 class="title">Введите станцию метро</h1>
         <form class="form_input search-box" name="form_place">
         <button type="submit" class="button btn-search"><i class="fas fa-search"></i></button>
@@ -19,5 +19,8 @@
           </datalistс>
 </form>
     </main>
+    <footer class="footer">
+        <iframe class="map" src="https://yandex.ru/map-widget/v1/?um=constructor%3A732564ed67890d73bbfc767ac0854d73590a9aef2ead77e24bc309c24e19ef5b&amp;source=constructor" frameborder="0"></iframe>
+    </footer>
 </body>
 </html>
