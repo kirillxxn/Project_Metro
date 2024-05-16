@@ -2,16 +2,16 @@ import '../styles/index.css';
 import {arrayStationsMetro} from './stationmetro';
 const heartString = '♥'
 const buttonSearch = document.querySelector('.button');
+const metroYes = document.querySelector('.metro_yes')
 function compareInputWithArray(evt) {
   evt.preventDefault();
   const arrayCopy = arrayStationsMetro.map((element) => element.toLowerCase());
-  const inputValue = document.getElementById('userInput');
+  const inputValue = document.getElementById('userInput').value;
   if (arrayCopy.includes(inputValue) || arrayStationsMetro.includes(inputValue)) {
     alert('Метро находиться в пределах Мкад' + " " + heartString);
   } else {
     alert('Метро за мкадом' + " " + '=(');
   }
-  inputValue.value = '';
 }
 buttonSearch.addEventListener('click', compareInputWithArray);
 const searchInput = document.getElementById('userInput');
