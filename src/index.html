@@ -7,13 +7,22 @@
     <title>Проверка Метро</title>
 </head>
 <body class="body">
+    <span class="overlay"></span>
     <header class="header">Проверка станций метро</header>
     <main class="container">
+        <span  id="temp"></span>
         <h1 class="title">Введите станцию метро</h1>
-        <form class="form_input" name="form_place">
-        <input class="input" id="userInput" type="search" placeholder="Введите станцию метро">
-        <button class="button fa fa-search"></button>
+        <form class="form_input search-box" name="form_place">
+        <button type="submit" class="button btn-search"><i class="fas fa-search"></i></button>
+        <input class="input input-search" id="userInput" type="text" list="autocomplete" autocomplete="off" placeholder="Введите станцию метро">
+        <datalist  id="autocomplete">
+          </datalistс>
 </form>
     </main>
+    <div id="popup-overlay">
+        <div id="popup">
+          <h1>Good</h1>
+        </div>
+      </div>
 </body>
 </html>
