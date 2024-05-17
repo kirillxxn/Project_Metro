@@ -30,16 +30,36 @@
     text-align: center;
     font-weight: 700;
 }
+.nav_menu{
+display: flex;
+justify-content: center;
+
+}
+.nav_item{
+  display: flex;
+  gap: 150px;
+}
+.nav_link{
+  font-size: clamp(0.625rem, 8.913vw - 0.058rem, 1.438rem);
+  text-decoration: none;
+  transform: scale(1);
+}
+.nav_link:hover{
+    font-size: clamp(0.625rem, 8.913vw - 0.058rem, 1.838rem);
+    transition: 1s;
+    border-bottom: 1px solid gray;
+}
 .header_title{
+  margin-block-start: 80px;
   font-size: clamp(0.625rem, 8.913vw - 0.058rem, 3.438rem);
 }
 .container{
-    margin-block-start: 50px;
+    margin-block-start: 80px;
     display: flex;
     flex-direction: column;
     text-align: center;
     font-size: 50px;
-    gap: 10px;
+    gap: 40px;
 }
 .title{
   font-size: clamp(0.625rem, 8.913vw - 0.058rem, 4.438rem);
@@ -55,8 +75,7 @@
 .map{
   border: 5px rebeccapurple solid;
   width: 100%;
-  min-height: 500px;
-  margin-block-start: 50px;
+  min-height: 600px;
   border-radius: 50px;
   
 }
@@ -125,6 +144,76 @@
     border-bottom:1px solid rgba(255, 0, 0, 0.5);
     transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
   }
+  .body:hover{
+    cursor: default;
+  }
+  .popup_section{
+    display: flex;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    position: fixed;
+        opacity: 0;
+  }
+  
+  .popup_yes{
+    border: 3px white solid;
+    background-image: url(/src/image/bg.jpg);
+    text-shadow: none;
+    color: white;
+    min-width: 300px;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+   
+  }
+  .popup_title{
+    border-bottom: 1px white solid;
+  }
+  .popup_p{
+
+  }
+  .popup_is-animated {
+
+    transition: visibility 0s 0.6s, opacity 0.6s;
+}
+  .closeModal {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 55px;
+    right: 47%;
+    width: 24px;
+    height: 24px;
+    opacity: 0.8;
+    cursor: pointer;
+    transition: opacity ease 0.5s;
+  
+    &:hover {
+      opacity: 1;
+    }
+  }
+  
+  .closeModal::before,
+  .closeModal::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    display: block;
+    width: 24px;
+    height: 3px;
+    background: white;
+  }
+  
+  .closeModal::before {
+    transform: rotate(45deg);
+  }
+  
+  .closeModal::after {
+    transform: rotate(-45deg);
+  }
 @media (max-width: 1024px) { 
   .input-search::placeholder{
     color: #fff;
@@ -148,4 +237,13 @@
     border-bottom:1px solid rgba(255, 0, 0, 0.5);
     transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
   }
+  .nav_menu{
+    display: flex;
+    justify-content: center;
+    
+    }
+    .nav_item{
+      display: flex;
+      gap: 50px;
+    }
 }

@@ -10,6 +10,7 @@ module.exports = {
     filename: 'main.js',
         publicPath: ''
   },
+  
   mode: 'development',
   devServer: {
     static: path.resolve(__dirname, './dist'), // путь, куда "смотрит" режим разработчика
@@ -42,9 +43,15 @@ module.exports = {
       },
     ]
   },
-  plugins: [new HtmlWebpackPlugin({
-    template: './src/index.html' // путь к файлу index.html
-  }),
+  plugins: [
+    new HtmlWebpackPlugin({ 
+    filename: 'index.html',
+    template: './src/index.html'}),
+    new HtmlWebpackPlugin({  
+    filename: 'map.html',
+    template: './src/map.html'}),
+
+  
   new CleanWebpackPlugin(),
   new MiniCssExtractPlugin()
 ] // добавьте массив

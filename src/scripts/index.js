@@ -1,14 +1,22 @@
 import '../styles/index.css';
 import {arrayStationsMetro} from './stationmetro';
-const heartString = '♥'
 const buttonSearch = document.querySelector('.button');
-const metroYes = document.querySelector('.metro_yes')
+const metroYes = document.querySelector('.popup_section');
+const buttonClose = metroYes.querySelector('.closeModal');
+const resetInputValue = document.getElementById('userInput');
+function closeModal(){
+buttonClose.addEventListener('click', function(){
+  metroYes.style.opacity = 0;
+  resetInputValue.value = '';
+})
+}
 function compareInputWithArray(evt) {
   evt.preventDefault();
   const arrayCopy = arrayStationsMetro.map((element) => element.toLowerCase());
   const inputValue = document.getElementById('userInput').value;
   if (arrayCopy.includes(inputValue) || arrayStationsMetro.includes(inputValue)) {
-    alert('Метро находиться в пределах Мкад' + " " + heartString);
+    metroYes.style.opacity = 1;
+    closeModal();
   } else {
     alert('Метро за мкадом' + " " + '=(');
   }
@@ -40,7 +48,7 @@ fetch(urlTemp)
 });
 function renderTemp(data){
   const tempValue = document.querySelector('#temp');
-  if(data.length > 15) {
+  if(data > 15) {
   tempValue.textContent = '☀' + " " + data;
   }
   else{
